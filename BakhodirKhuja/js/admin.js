@@ -1,10 +1,9 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
-console.log(process.env.PORT)
 submit.onclick = async function () {
 
-	const response = await fetch('https://fruise.herokuapp.com//admin', {
+	const response = await fetch('https://fruise.herokuapp.com/admin', {
 		method: 'POST',
 		body: JSON.stringify(
 			{
