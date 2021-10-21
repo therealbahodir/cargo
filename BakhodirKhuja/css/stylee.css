@@ -339,6 +339,7 @@ body {
     margin-top: 25px;
     margin-bottom: 22px;
     padding-bottom: 20px;
+    color: white;
 }
 
 .receiver h1 {
@@ -346,7 +347,22 @@ body {
     margin-top: 25px;
     margin-bottom: 22px;
     padding-bottom: 20px;
+    color: white;
 }
+.sender label {
+    color: white;
+}
+.receiver label {
+    color: white;
+}
+
+.Items {
+    color: white;
+}
+.submit label {
+    color: white;
+}
+
 
 #btnAdd {
     cursor: pointer;
@@ -463,7 +479,7 @@ body {
 }
 
 .submit p {
-    color: dimgrey;
+    color: #C0C0C0;
 }
 
 textarea { font-size: 18px; }

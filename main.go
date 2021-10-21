@@ -1,10 +1,11 @@
 package main
 
 import ( 
-	// "net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/static"
-	// "github.com/gorilla/handlers"
+	"github.com/joho/godotenv"
+	"log"
+	"os"
 )
 
 var ForLogin = Admin {
@@ -13,6 +14,13 @@ var ForLogin = Admin {
 }
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Print(err)
+	}
+
+	port := os.Getenv("PORT")
+
 	router := gin.Default()
 
 
@@ -27,7 +35,7 @@ func main() {
 		"/", static.LocalFile("./BakhodirKhuja",true),
 	))
 
-	router.Run(":8050")
+	router.Run(port)
 }
 
 
