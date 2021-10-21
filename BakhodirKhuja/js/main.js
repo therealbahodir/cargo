@@ -54,7 +54,7 @@ submitBtn.onclick =  async function (){
 
 	console.log(senderLastName.value)
 
-	const response = await fetch('https://fruise.herokuapp.com//declaration', {
+	const response = await fetch('https://fruise.herokuapp.com/declaration', {
 		method: 'POST',
 		body: JSON.stringify({
     receiverFirstName : receiverName.value,
