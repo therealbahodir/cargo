@@ -3,7 +3,7 @@ async function main () {
 
 
   const response = await fetch('https://fruise.herokuapp.com/cargo')
-
+  console.log(response)
   const json = await response.json()
 
   var state = {
