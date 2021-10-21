@@ -29,7 +29,7 @@ func GetOrders() (output []GetOrderByPage) {
 	PG_DBNAME := os.Getenv("DB_DBNAME")
 	
 	connection := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d",
+		"host=%s user=%s password=%s dbname=%s port=%s",
 		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
@@ -71,7 +71,7 @@ func PatchItem(completed PatchCompleted) () {
 	PG_DBNAME := os.Getenv("DB_DBNAME")
 	
 	connection := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d",
+		"host=%s user=%s password=%s dbname=%s port=%s",
 		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
@@ -99,7 +99,7 @@ func GetByItemId(id string) (output []GetByItem) {
 	PG_DBNAME := os.Getenv("DB_DBNAME")
 	
 	connection := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d",
+		"host=%s user=%s password=%s dbname=%s port=%s",
 		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
@@ -156,7 +156,7 @@ func PostOrders (body PostOrder) {
 	PG_DBNAME := os.Getenv("DB_DBNAME")
 	
 	connection := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d",
+		"host=%s user=%s password=%s dbname=%s port=%s",
 		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
@@ -212,7 +212,7 @@ func DeleteOrder(id string) {
 	PG_DBNAME := os.Getenv("DB_DBNAME")
 	
 	connection := fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d",
+		"host=%s user=%s password=%s dbname=%s port=%s",
 		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 
