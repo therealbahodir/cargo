@@ -2,7 +2,7 @@ statusBtn.onclick = async function () {
 
 	const id = window.location.hash.substring(8)
 
-	const response = await fetch('http://localhost:8050/cargo', {
+	const response = await fetch('https://fruise.herokuapp.com//cargo', {
 		method: 'POST',
 		body: JSON.stringify({
     							"id" : id

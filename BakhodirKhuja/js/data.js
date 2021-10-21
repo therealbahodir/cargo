@@ -2,7 +2,7 @@
 async function main () {
 
 
-  const response = await fetch('http://localhost:8050/cargo')
+  const response = await fetch('https://fruise.herokuapp.com//cargo')
 
   const json = await response.json()
 
