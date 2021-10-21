@@ -22,7 +22,8 @@ func GetOrders() (output []GetOrderByPage) {
 		Host, Username, Password, Database, Port,
 	)
 	db, err := sql.Open("postgres", connection)
-
+	log.Println("herewego")
+	log.Print(db)
 	defer db.Close()
 
 	if err != nil {panic(err)}
