@@ -8,10 +8,10 @@ import (
 )
 
 var (
-	Host = "localhost"
-	Username = "bahodir"
-	Password = "221202"
-	Database = "cargo"
+	Host = "john.db.elephantsql.com"
+	Username = "vncooinw"
+	Password = "gwq9q2BmsyksJsjaWVoEcomkAE9LPI6h"
+	Database = "vncooinw"
 	Port = 5432
 )
 
