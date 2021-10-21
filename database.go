@@ -5,6 +5,8 @@ import (
 	"database/sql"
 	_"github.com/lib/pq"
 	"log"
+	"os"
+	"github.com/joho/godotenv"
 )
 
 var (
@@ -16,10 +18,19 @@ var (
 )
 
 func GetOrders() (output []GetOrderByPage) {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
 
+	PG_HOST := os.Getenv("DB_HOST")
+	PG_USER := os.Getenv("DB_USER")
+	PG_PASSWORD := os.Getenv("DB_PASSWORD")
+	PG_PORT := os.Getenv("DB_PORT")
+	PG_DBNAME := os.Getenv("DB_DBNAME")
+	
 	connection := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%d",
-		Host, Username, Password, Database, Port,
+		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
 	log.Println("herewego")
@@ -49,9 +60,19 @@ func GetOrders() (output []GetOrderByPage) {
 
 func PatchItem(completed PatchCompleted) () {
 
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
+	PG_HOST := os.Getenv("DB_HOST")
+	PG_USER := os.Getenv("DB_USER")
+	PG_PASSWORD := os.Getenv("DB_PASSWORD")
+	PG_PORT := os.Getenv("DB_PORT")
+	PG_DBNAME := os.Getenv("DB_DBNAME")
+	
 	connection := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%d",
-		Host, Username, Password, Database, Port,
+		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
 
@@ -67,9 +88,19 @@ func PatchItem(completed PatchCompleted) () {
 
 func GetByItemId(id string) (output []GetByItem) {
 
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
+	PG_HOST := os.Getenv("DB_HOST")
+	PG_USER := os.Getenv("DB_USER")
+	PG_PASSWORD := os.Getenv("DB_PASSWORD")
+	PG_PORT := os.Getenv("DB_PORT")
+	PG_DBNAME := os.Getenv("DB_DBNAME")
+	
 	connection := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%d",
-		Host, Username, Password, Database, Port,
+		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 	db, err := sql.Open("postgres", connection)
 
@@ -114,11 +145,20 @@ func GetByItemId(id string) (output []GetByItem) {
 
 func PostOrders (body PostOrder) {
 
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
+	PG_HOST := os.Getenv("DB_HOST")
+	PG_USER := os.Getenv("DB_USER")
+	PG_PASSWORD := os.Getenv("DB_PASSWORD")
+	PG_PORT := os.Getenv("DB_PORT")
+	PG_DBNAME := os.Getenv("DB_DBNAME")
+	
 	connection := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%d",
-		Host, Username, Password, Database, Port,
+		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
-
 	db, err := sql.Open("postgres", connection)
 
 	if err != nil {panic(err)}
@@ -161,9 +201,19 @@ func PostOrders (body PostOrder) {
 
 func DeleteOrder(id string) {
 
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
+	PG_HOST := os.Getenv("DB_HOST")
+	PG_USER := os.Getenv("DB_USER")
+	PG_PASSWORD := os.Getenv("DB_PASSWORD")
+	PG_PORT := os.Getenv("DB_PORT")
+	PG_DBNAME := os.Getenv("DB_DBNAME")
+	
 	connection := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%d",
-		Host, Username, Password, Database, Port,
+		PG_HOST, PG_USER, PG_PASSWORD, PG_DBNAME, PG_PORT,
 	)
 
 	db, err := sql.Open("postgres", connection)
