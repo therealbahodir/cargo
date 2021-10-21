@@ -14,6 +14,7 @@ var ForLogin = Admin {
 }
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	err := godotenv.Load()
 	if err != nil {
 		log.Print(err)
