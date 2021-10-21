@@ -35,7 +35,7 @@ func main() {
 		"/", static.LocalFile("./BakhodirKhuja",true),
 	))
 
-	router.Run(port)
+	router.Run(":" + port)
 }
 
 
