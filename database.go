@@ -19,7 +19,7 @@ var (
 
 func GetOrders() (output []GetOrderByPage) {
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 
 	PG_HOST := os.Getenv("DB_HOST")
@@ -61,7 +61,7 @@ func GetOrders() (output []GetOrderByPage) {
 func PatchItem(completed PatchCompleted) () {
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 
 	PG_HOST := os.Getenv("DB_HOST")
@@ -89,7 +89,7 @@ func PatchItem(completed PatchCompleted) () {
 func GetByItemId(id string) (output []GetByItem) {
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 
 	PG_HOST := os.Getenv("DB_HOST")
@@ -146,7 +146,7 @@ func GetByItemId(id string) (output []GetByItem) {
 func PostOrders (body PostOrder) {
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 
 	PG_HOST := os.Getenv("DB_HOST")
@@ -202,7 +202,7 @@ func PostOrders (body PostOrder) {
 func DeleteOrder(id string) {
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 
 	PG_HOST := os.Getenv("DB_HOST")
