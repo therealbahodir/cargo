@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/stylee.css">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/fevicon.png" type="">
+
+	<title>App</title>
+</head>
+<body>
+
+	<div class="foo">
+		<div class="likelist">
+	<h1 id="orderid"><span>Order Id:</span> <span id="idd"></span></h1><br>
+	
+	<h1 id="item"><span>Items:</span><br> <span id="items"></span></h1><br>
+
+	<div class="receiverdata">
+		<h1>Receiver's Info:</h1><br>
+
+	<h2>
+		<span>Full Name:</span>
+		<span id="rfullname"></span><br>
+
+
+		<span>Passport:</span>
+		<span id="rpassport"></span><br>
+
+
+		<span>Phone:</span>
+		<span id="rphone"></span><br>
+
+
+		<span>Address:</span>
+		<span id="raddress"></span><br>
+
+
+		<span>City:</span>
+		<span id="rcity"></span><br>
+
+	</h2><br><br>
+	</div>
+	
+
+	<div class="senderdata">
+		<h1>Sender's Info:</h1><br>
+
+	<h2>
+		<span>Full Name:</span>
+		<span id="sfullname"></span><br>
+
+
+		<span>Phone:</span>
+		<span id="sphone"></span><br>
+
+
+		<span>Email:</span>
+		<span id="semail"></span><br>
+
+
+		<span>City:</span>
+		<span id="scity"></span><br>
+
+
+		<span>Address:</span>
+		<span id="saddress"></span><br>
+
+
+		<span>Postcode:</span>
+		<span id="spostcode"></span><br>
+
+	</h2><br><br>
+	</div>
+
+	
+
+	
+	<h1 class="forcomment">Comment:</h1>
+	<h2 class="forcomment">
+		<span id="comment"></span>
+	</h2><br><br>
+
+	<h1 class="fortotal"><span>Total Value:</span> <span id="value"></span></h1>
+
+	<h1 class="fortotal"><span>IsDelivered:</span> <span id="delivered"></span></h1>
+	</div>
+
+	<div id="smthnewlike">
+	<div class="forButton">
+	<button onclick="location.href='data.html'" type="button" class="button1"><span class="button__text">RETURN</span></button>
+
+	<button id="statusBtn" type="button" class="button1"><span class="button__text">CHANGE STATUS</span></button>
+
+	<button id="deleteBtn" type="button" class="button1"><span class="button__text">DELETE</span></button>
+	</div>
+	</div>
+
+	
+</div>
+<script src="./js/here.js"></script>
+<script>
+
+	
+
+	async function main () {
+
+		const id = window.location.hash.substring(8)
+
+		const response = await fetch('http://localhost:8050/cargo/' + id)
+
+		const json = await response.json()
+
+  		var mixed = []
+
+  		for (const i of json){
+
+  			mixed.push('            ' + i.Name + ':                             ' +i.Quantity + '                 ')
+  		}
+
+
+		items.textContent = mixed
+		idd.textContent = json[0].OrderId
+		rfullname.textContent = json[0].ReceiverFullName
+		rpassport.textContent = json[0].ReceiverPasspost
+		rphone.textContent = json[0].ReceiverPhone
+		raddress.textContent = json[0].ReceiverAddress
+		rcity.textContent = json[0].ReceiverCity
+		sfullname.textContent = json[0].SenderFullName
+		sphone.textContent = json[0].SenderPhone
+		semail.textContent = json[0].SenderEmail
+		scity.textContent = json[0].SenderCity
+		saddress.textContent = json[0].SenderAddress
+		spostcode.textContent = json[0].SenderPostcode
+		comment.textContent = json[0].Comment
+		value.textContent = json[0].Value
+		delivered.textContent = json[0].IsDelivered
+
+
+	}
+	
+	main()
+
+	console.log()
+
+</script>
+</body>
+</html>
