@@ -37,13 +37,3 @@ func main() {
 
 	router.Run(":" + port)
 }
-
-
-
-
-
-	// http.ListenAndServe(":8050", handlers.CORS(headers,methods,origins)(router))
-
-	// headers := handlers.AllowedHeaders([]string {"X-Requested-With", "Content-Type", "Authorization"})
-	// methods := handlers.AllowedMethods([]string {"GET", "POST", "DELETE", "PATCH"})
-	// origins := handlers.AllowedOrigins([]string{"*"})

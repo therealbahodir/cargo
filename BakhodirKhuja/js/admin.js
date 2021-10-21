@@ -1,7 +1,7 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
-
+console.log(process.env.PORT)
 submit.onclick = async function () {
 
 	const response = await fetch('http://localhost:8050/admin', {
